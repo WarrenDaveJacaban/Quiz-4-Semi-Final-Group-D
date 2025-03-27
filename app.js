@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
-const examsRoutes = require("./routes/exams");
+const examRoutes = require("./routes/examRoutes"); // Ensure this matches the correct filename
 
 app.use(express.json());
 
-app.use("/exams", examsRoutes);
+// Corrected variable name
+app.use("/exams", examRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "Group <your_group> API" });
